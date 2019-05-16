@@ -8,21 +8,21 @@ module.exports = {
   },
   modules: [
     // Doc: https://github.com/nuxt-community/axios-module#usage
-    '@nuxtjs/axios'
+    '@nuxtjs/axios', '@nuxtjs/proxy'
   ],
   axios: {
     proxy: true,
-    prefix: '/api/',
+    // prefix: '/api/',
     credentials: true
     // See https://github.com/nuxt-community/axios-module#options
   },
 
   proxy: {
-    '/': {
-      target: 'http://127.0.0.1:3000', // 这个网站是开源的可以请求到数据的
+    '/api/': {
+      target: 'http://127.0.0.1:3000',
+      changeOrigin: true,
       pathRewrite: {
-        // '^/api/': '/',
-        changeOrigin: true
+        '^/api': '/'
       }
     }
   },
@@ -58,27 +58,19 @@ module.exports = {
   ** Plugins to load before mounting the App
   */
   plugins: [
-    '@/plugins/element-ui'
+    '@/plugins/element-ui',
+    '@/plugins/axios'
   ],
 
   /*
   ** Nuxt.js modules
   */
-  modules: [
-    // Doc: https://axios.nuxtjs.org/usage
-    '@nuxtjs/axios'
-  ],
-  /*
-  ** Axios module configuration
-  */
-  axios: {
-    // See https://github.com/nuxt-community/axios-module#options
-  },
 
   /*
   ** Build configuration
   */
   build: {
+    vendor: ['axios']
     /*
     ** You can extend webpack config here
     */
