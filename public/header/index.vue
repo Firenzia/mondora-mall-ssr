@@ -1,24 +1,31 @@
 <template>
-  <el-row
-    :gutter="20"
-    class="m-header">
-    <el-col :span="6">
-      <geo />
+  <el-row>
+    <el-col :offset="3" :span="6">
+      <nuxt-link to="/">
+        home
+      </nuxt-link>
     </el-col>
-    <el-col :span="6"><div class="grid-content bg-purple" /></el-col>
-    <el-col :span="6"><div class="grid-content bg-purple" /></el-col>
+
+    <el-col :offset="12" :span="6">
+      <nuxt-link to="/seller/login">
+        seller login
+      </nuxt-link>
+      <nuxt-link to="/user/login">
+        user login
+      </nuxt-link>
+    </el-col>
   </el-row>
 </template>
 
 <script>
-import Geo from './geo.vue'
 export default {
-  components: {
-    Geo
-  }
+
 }
 </script>
 
 <style lang="scss">
   @import "@/assets/css/public/layout.scss";
+.m-header{
+  background: lightseagreen
+}
 </style>

@@ -1,0 +1,11 @@
+<template>
+  <div>/seller/delivery/service</div>
+</template>
+<script>
+export default {
+
+}
+</script>
+<style lang="scss" scoped>
+
+</style>

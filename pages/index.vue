@@ -1,5 +1,6 @@
 <template>
   <section class="container">
+    <div> this i  home page</div>
     <div>
       <h1 class="title">
         nuxt-demo, ip isddd {{ ip }}
@@ -15,12 +16,9 @@
 </template>
 
 <script>
-// import Logo from '~/components/Logo.vue'
 
 export default {
-  // components: {
-  //   Logo
-  // },
+
   data() {
     return {
       list: [],
@@ -28,11 +26,11 @@ export default {
     }
   },
   async asyncData({ $axios }) {
-    const res = await $axios.get('/student/list')
-    console.log(res)
-    return {
-      list: res.data.result
-    }
+    // const res = await $axios.get('/student/list')
+    // console.log(res)
+    // return {
+    //   list: res.data.result
+    // }
   },
   methods: {
     async getData() {
