@@ -1,6 +1,6 @@
 <template>
   <el-container>
-    <el-header style="background:orange !important">
+    <el-header style="background:orange !important;margin-bottom:30px">
       <my-header />
     </el-header>
     <el-main>
@@ -8,7 +8,7 @@
         <nuxt />
       </div>
     </el-main>
-    <el-footer style="background:orange !important">
+    <el-footer style="background:orange !important;margin-top:60px">
       I am footer
     </el-footer>
   </el-container>
@@ -24,7 +24,7 @@ export default {
 
 <style>
 .content-wrapper{
-  max-width: 1280px;
+  max-width: 1200px;
   margin:0 auto;
 }
 </style>
