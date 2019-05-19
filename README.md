@@ -1,22 +1,22 @@
-# nuxt-demo
+## checklist
+ buyer side:
+- [ ] 登陆 注册 
+- [ ] 添加购物车
+- [ ] 支付
+- [ ] 退货 （optional）
+- [ ] 收藏
+- [ ] 已经买过给评论
+- [ ] 搜索
+- [ ] 修改个人信息（上传照片）(七牛云)
+- [ ] 用户行为埋点 （optional, 查看/收藏/购物车/支付）
+<br>
 
-> just a nuxt demo
+seller side:
+- [ ] 登陆 注册 
+- [ ] 开店 & 修改店铺信息
+- [ ] 上传宝贝（上传照片）
+- [ ] 管理宝贝
+- [ ] 发货
+- [ ] 管理评论/回复评论
+- [ ] 查看交易图表
 
-## Build Setup
-
-``` bash
-# install dependencies
-$ npm install
-
-# serve with hot reload at localhost:3000
-$ npm run dev
-
-# build for production and launch server
-$ npm run build
-$ npm start
-
-# generate static project
-$ npm run generate
-```
-
-For detailed explanation on how things work, checkout [Nuxt.js docs](https://nuxtjs.org).
