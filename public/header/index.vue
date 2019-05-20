@@ -4,6 +4,9 @@
       <nuxt-link to="/">
         home
       </nuxt-link>
+      <nuxt-link to="/cart">
+        购物车
+      </nuxt-link>
     </el-col>
 
     <el-col :offset="12" :span="6">

@@ -1,5 +1,6 @@
 export default ({ app }) => {
   app.router.afterEach((to, from) => {
-    console.log(to.path)
+    //  todo  增加埋点
+    console.log('to path', to.path)
   })
 }

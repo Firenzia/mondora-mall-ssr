@@ -39,10 +39,10 @@ export default {
     }
   },
   async asyncData() {
-    console.log('get data here')
     const res = await request.get('/api/student/list', { })
+    console.log('make req in async data', res)
     return {
-      list: res
+      list: res.result
     }
     // const res = await $axios.get('/student/list')
     // console.log(res)
@@ -52,8 +52,8 @@ export default {
   },
   methods: {
     async getData() {
-      // const res = await this.$axios.get('/api/student/list')
-      console.log('12333ddd3sdddss')
+      const res = await request.get('/api/student/list')
+      console.log(res.result)
     },
     goTo() {
       this.$router.push('/product?id=100')

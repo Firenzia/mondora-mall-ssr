@@ -6,11 +6,12 @@ import '..\\node_modules\\element-ui\\lib\\theme-chalk\\index.css'
 import '..\\assets\\css\\main.css'
 
 import _6f6c098b from '..\\layouts\\default.vue'
+import _77a66d33 from '..\\layouts\\login.vue'
 
-const layouts = { "_default": _6f6c098b }
+const layouts = { "_default": _6f6c098b,"_login": _77a66d33 }
 
 export default {
-  head: {"title":"nuxt-demo","meta":[{"charset":"utf-8"},{"name":"viewport","content":"width=device-width, initial-scale=1"},{"hid":"description","name":"description","content":"just a nuxt demo"}],"link":[{"rel":"icon","type":"image\u002Fx-icon","href":"\u002Ffavicon.ico"}],"style":[],"script":[]},
+  head: {"title":"mondora-mall","meta":[{"charset":"utf-8"},{"name":"viewport","content":"width=device-width, initial-scale=1"},{"hid":"description","name":"description","content":"just a nuxt demo"}],"link":[{"rel":"icon","type":"image\u002Fx-icon","href":"\u002Ffavicon.ico"}],"style":[],"script":[]},
 
   render(h, props) {
     const loadingEl = h('nuxt-loading', { ref: 'loading' })

@@ -9,7 +9,12 @@
 </template>
 <script>
 export default {
+  data() {
+    return {
 
+    }
+  },
+  layout: 'login'
 }
 </script>
 <style lang="scss" scoped>

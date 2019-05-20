@@ -39,7 +39,8 @@
 // }
 
 // start()
-const { Nuxt, Builder } = require('nuxt')
+// const { Nuxt, Builder } = require('nuxt')
+import { Nuxt, Builder } from 'nuxt'
 const fastify = require('fastify')({
   logger: true
 })

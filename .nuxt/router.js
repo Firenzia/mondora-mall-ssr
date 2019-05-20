@@ -2,20 +2,22 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import { interopDefault } from './utils'
 
-const _744b1fb2 = () => interopDefault(import('..\\pages\\cart\\index.vue' /* webpackChunkName: "pages_cart_index" */))
-const _21cec43c = () => interopDefault(import('..\\pages\\payment\\index.vue' /* webpackChunkName: "pages_payment_index" */))
-const _62e86db3 = () => interopDefault(import('..\\pages\\product\\index.vue' /* webpackChunkName: "pages_product_index" */))
-const _0c799c81 = () => interopDefault(import('..\\pages\\store\\index.vue' /* webpackChunkName: "pages_store_index" */))
-const _6fb74238 = () => interopDefault(import('..\\pages\\seller\\login\\index.vue' /* webpackChunkName: "pages_seller_login_index" */))
-const _60b2b172 = () => interopDefault(import('..\\pages\\seller\\management.vue' /* webpackChunkName: "pages_seller_management" */))
-const _26ee8182 = () => interopDefault(import('..\\pages\\seller\\management\\delivery\\service.vue' /* webpackChunkName: "pages_seller_management_delivery_service" */))
-const _cf6692c8 = () => interopDefault(import('..\\pages\\seller\\management\\delivery\\shippment.vue' /* webpackChunkName: "pages_seller_management_delivery_shippment" */))
-const _5825062b = () => interopDefault(import('..\\pages\\seller\\management\\product\\check.vue' /* webpackChunkName: "pages_seller_management_product_check" */))
-const _6104281c = () => interopDefault(import('..\\pages\\seller\\management\\product\\publish.vue' /* webpackChunkName: "pages_seller_management_product_publish" */))
-const _6472eeb3 = () => interopDefault(import('..\\pages\\seller\\management\\transaction\\comment.vue' /* webpackChunkName: "pages_seller_management_transaction_comment" */))
-const _bc552570 = () => interopDefault(import('..\\pages\\seller\\management\\transaction\\deal.vue' /* webpackChunkName: "pages_seller_management_transaction_deal" */))
-const _84ed6cf8 = () => interopDefault(import('..\\pages\\user\\login\\index.vue' /* webpackChunkName: "pages_user_login_index" */))
-const _2848f852 = () => interopDefault(import('..\\pages\\index.vue' /* webpackChunkName: "pages_index" */))
+const _dc01e1fc = () => interopDefault(import('..\\pages\\cart\\index.vue' /* webpackChunkName: "pages_cart_index" */))
+const _9ff65a28 = () => interopDefault(import('..\\pages\\payment\\index.vue' /* webpackChunkName: "pages_payment_index" */))
+const _1dc3073a = () => interopDefault(import('..\\pages\\product\\index.vue' /* webpackChunkName: "pages_product_index" */))
+const _b578d19e = () => interopDefault(import('..\\pages\\store\\index.vue' /* webpackChunkName: "pages_store_index" */))
+const _152829e4 = () => interopDefault(import('..\\pages\\seller\\account\\index.vue' /* webpackChunkName: "pages_seller_account_index" */))
+const _1a18e630 = () => interopDefault(import('..\\pages\\seller\\login\\index.vue' /* webpackChunkName: "pages_seller_login_index" */))
+const _9a3c2fbc = () => interopDefault(import('..\\pages\\seller\\management.vue' /* webpackChunkName: "pages_seller_management" */))
+const _18752a8f = () => interopDefault(import('..\\pages\\seller\\management\\delivery\\service.vue' /* webpackChunkName: "pages_seller_management_delivery_service" */))
+const _7acb8dec = () => interopDefault(import('..\\pages\\seller\\management\\delivery\\shippment.vue' /* webpackChunkName: "pages_seller_management_delivery_shippment" */))
+const _941e464a = () => interopDefault(import('..\\pages\\seller\\management\\product\\check.vue' /* webpackChunkName: "pages_seller_management_product_check" */))
+const _2ca252bc = () => interopDefault(import('..\\pages\\seller\\management\\product\\publish.vue' /* webpackChunkName: "pages_seller_management_product_publish" */))
+const _5c61fd3a = () => interopDefault(import('..\\pages\\seller\\management\\transaction\\comment.vue' /* webpackChunkName: "pages_seller_management_transaction_comment" */))
+const _647c4ed0 = () => interopDefault(import('..\\pages\\seller\\management\\transaction\\deal.vue' /* webpackChunkName: "pages_seller_management_transaction_deal" */))
+const _147d7a30 = () => interopDefault(import('..\\pages\\user\\account\\index.vue' /* webpackChunkName: "pages_user_account_index" */))
+const _0fb88034 = () => interopDefault(import('..\\pages\\user\\login\\index.vue' /* webpackChunkName: "pages_user_login_index" */))
+const _4b92b8bc = () => interopDefault(import('..\\pages\\index.vue' /* webpackChunkName: "pages_index" */))
 
 Vue.use(Router)
 
@@ -76,60 +78,68 @@ export function createRouter() {
 
     routes: [{
       path: "/cart",
-      component: _744b1fb2,
+      component: _dc01e1fc,
       name: "cart"
     }, {
       path: "/payment",
-      component: _21cec43c,
+      component: _9ff65a28,
       name: "payment"
     }, {
       path: "/product",
-      component: _62e86db3,
+      component: _1dc3073a,
       name: "product"
     }, {
       path: "/store",
-      component: _0c799c81,
+      component: _b578d19e,
       name: "store"
     }, {
+      path: "/seller/account",
+      component: _152829e4,
+      name: "seller-account"
+    }, {
       path: "/seller/login",
-      component: _6fb74238,
+      component: _1a18e630,
       name: "seller-login"
     }, {
       path: "/seller/management",
-      component: _60b2b172,
+      component: _9a3c2fbc,
       name: "seller-management",
       children: [{
         path: "delivery/service",
-        component: _26ee8182,
+        component: _18752a8f,
         name: "seller-management-delivery-service"
       }, {
         path: "delivery/shippment",
-        component: _cf6692c8,
+        component: _7acb8dec,
         name: "seller-management-delivery-shippment"
       }, {
         path: "product/check",
-        component: _5825062b,
+        component: _941e464a,
         name: "seller-management-product-check"
       }, {
         path: "product/publish",
-        component: _6104281c,
+        component: _2ca252bc,
         name: "seller-management-product-publish"
       }, {
         path: "transaction/comment",
-        component: _6472eeb3,
+        component: _5c61fd3a,
         name: "seller-management-transaction-comment"
       }, {
         path: "transaction/deal",
-        component: _bc552570,
+        component: _647c4ed0,
         name: "seller-management-transaction-deal"
       }]
     }, {
+      path: "/user/account",
+      component: _147d7a30,
+      name: "user-account"
+    }, {
       path: "/user/login",
-      component: _84ed6cf8,
+      component: _0fb88034,
       name: "user-login"
     }, {
       path: "/",
-      component: _2848f852,
+      component: _4b92b8bc,
       name: "index"
     }],
 
