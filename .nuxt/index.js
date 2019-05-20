@@ -14,6 +14,7 @@ import { setContext, getLocation, getRouteData, normalizeError } from './utils'
 import nuxt_plugin_axios_41fa5890 from 'nuxt_plugin_axios_41fa5890' // Source: ./axios.js
 import nuxt_plugin_elementui_d905880e from 'nuxt_plugin_elementui_d905880e' // Source: ..\\plugins\\element-ui
 import nuxt_plugin_axios_2228ef02 from 'nuxt_plugin_axios_2228ef02' // Source: ..\\plugins\\axios
+import nuxt_plugin_router_3f7e063d from 'nuxt_plugin_router_3f7e063d' // Source: ..\\plugins\\router
 
 // Component: <no-ssr>
 Vue.component(NoSSR.name, NoSSR)
@@ -134,6 +135,7 @@ async function createApp(ssrContext) {
   if (typeof nuxt_plugin_axios_41fa5890 === 'function') await nuxt_plugin_axios_41fa5890(app.context, inject)
   if (typeof nuxt_plugin_elementui_d905880e === 'function') await nuxt_plugin_elementui_d905880e(app.context, inject)
   if (typeof nuxt_plugin_axios_2228ef02 === 'function') await nuxt_plugin_axios_2228ef02(app.context, inject)
+  if (typeof nuxt_plugin_router_3f7e063d === 'function') await nuxt_plugin_router_3f7e063d(app.context, inject)
 
   // If server-side, wait for async component to be resolved first
   if (process.server && ssrContext && ssrContext.url) {

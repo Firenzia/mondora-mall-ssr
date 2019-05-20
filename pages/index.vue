@@ -28,6 +28,7 @@
 </template>
 
 <script>
+import request from '@/service'
 
 export default {
 
@@ -37,7 +38,12 @@ export default {
       ip: 0
     }
   },
-  async asyncData({ $axios }) {
+  async asyncData() {
+    console.log('get data here')
+    const res = await request.get('/api/student/list', { })
+    return {
+      list: res
+    }
     // const res = await $axios.get('/student/list')
     // console.log(res)
     // return {
@@ -46,8 +52,8 @@ export default {
   },
   methods: {
     async getData() {
-      const res = await this.$axios.get('/api/student/list')
-      console.log(res)
+      // const res = await this.$axios.get('/api/student/list')
+      console.log('12333ddd3sdddss')
     },
     goTo() {
       this.$router.push('/product?id=100')
