@@ -52,7 +52,7 @@ export default {
   },
   methods: {
     async getData() {
-      const res = await request.get('/api/student/list')
+      const res = await request.get('/api/product/list')
       console.log(res.result)
     },
     goTo() {
