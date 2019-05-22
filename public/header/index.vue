@@ -5,7 +5,7 @@
         home
       </nuxt-link>
       <nuxt-link to="/cart">
-        购物车
+        {{$store.state.isLogin}} {{$store.state.username}}
       </nuxt-link>
     </el-col>
 
@@ -21,8 +21,26 @@
 </template>
 
 <script>
+import request from '@/service'
 export default {
+  data(){
+    return {
 
+    }
+  },
+  
+  mounted(){
+    this.checkStatus()
+  },
+  methods:{
+    async checkStatus(){
+      // 开始服务端渲染没拿到cookie
+      let res = await request.get('/api/user/auth')
+      this.$store.commit('setLogin', res.code)
+      this.$store.commit('setUsername', res.data.username)
+    }
+  }
+  
 }
 </script>
 

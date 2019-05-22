@@ -6,6 +6,7 @@
     <button @click="getData">
       test
     </button>
+    <p>store </p>
 
     <div class="product-wrapper">
       <div class="category">
@@ -35,20 +36,16 @@ export default {
   data() {
     return {
       list: [],
-      ip: 0
     }
   },
+
   async asyncData() {
     const res = await request.get('/api/student/list', { })
-    console.log('make req in async data', res)
+    console.log('make reqdd 222in async data', res)
     return {
       list: res.result
     }
-    // const res = await $axios.get('/student/list')
-    // console.log(res)
-    // return {
-    //   list: res.data.result
-    // }
+
   },
   methods: {
     async getData() {
@@ -57,8 +54,17 @@ export default {
     },
     goTo() {
       this.$router.push('/product?id=100')
+    },
+    async check(){
+      // 开始服务端渲染没拿到cookie
+      let res = await request.get('/api/user/auth')
+      this.$store.commit('setLogin', res.code)
     }
-  }
+  },
+  mounted(){
+    // this.check()
+  },
+  
 }
 </script>
 

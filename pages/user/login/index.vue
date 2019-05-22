@@ -24,6 +24,9 @@
           <el-button type="primary" @click="query">
             查询
           </el-button>
+           <el-button type="primary" @click="auth">
+            是否已登陆
+          </el-button>
         </el-form-item>
       </el-form>
     </div>
@@ -60,6 +63,10 @@ export default {
     },
     async query() {
       const res = await request.get('/api/user/info', {})
+      console.log(res)
+    },
+    async auth() {
+      const res = await request.get('/api/user/auth')
       console.log(res)
     }
   }
