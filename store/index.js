@@ -11,19 +11,19 @@ const store = () => new Vuex.Store({
     username: ''
   },
   mutations: {
-    setLogin (state, status) {
-      console.log('status',status)
+    setLogin(state, status) {
+      console.log('status', status)
       state.isLogin = status
     },
-    setUsername(state, name){
-      state.username =name
+    setUsername(state, name) {
+      state.username = name
     }
   },
-  actions:{
-    async setLogin ({commit}) {
-      let res = await request.get('/api/user/auth')
-      console.log('res',res)
-      commit('setLogin',res.code)
+  actions: {
+    async setLogin({ commit }) {
+      const res = await request.get('/api/user/auth')
+      console.log('res', res)
+      commit('setLogin', res.code)
     }
   }
 })

@@ -5,7 +5,7 @@
         home
       </nuxt-link>
       <nuxt-link to="/cart">
-        {{$store.state.isLogin}} {{$store.state.username}}
+        <!-- {{ $store.state.isLogin }} {{ $store.state.username }} -->
       </nuxt-link>
     </el-col>
 
@@ -23,24 +23,25 @@
 <script>
 import request from '@/service'
 export default {
-  data(){
+  data() {
     return {
 
     }
   },
-  
-  mounted(){
+
+  mounted() {
     this.checkStatus()
+    console.log(this.$store)
   },
-  methods:{
-    async checkStatus(){
+  methods: {
+    async checkStatus() {
       // 开始服务端渲染没拿到cookie
-      let res = await request.get('/api/user/auth')
+      const res = await request.get('/api/user/auth')
       this.$store.commit('setLogin', res.code)
-      this.$store.commit('setUsername', res.code===0?'':res.data.username)
+      this.$store.commit('setUsername', res.code === 0 ? '' : res.data.username)
     }
   }
-  
+
 }
 </script>
 

@@ -42,7 +42,7 @@ export default {
 </script>
 <style lang="scss" scoped>
 .managent-wrapper{
-  height:600px;
+  min-height:600px;
   display: flex;
   .pane-left{
     width:200px;

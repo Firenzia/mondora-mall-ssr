@@ -24,7 +24,7 @@
           <el-button type="primary" @click="query">
             查询
           </el-button>
-           <el-button type="primary" @click="auth">
+          <el-button type="primary" @click="auth">
             是否已登陆
           </el-button>
         </el-form-item>
