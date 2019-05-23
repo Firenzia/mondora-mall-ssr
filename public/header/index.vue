@@ -37,7 +37,7 @@ export default {
       // 开始服务端渲染没拿到cookie
       let res = await request.get('/api/user/auth')
       this.$store.commit('setLogin', res.code)
-      this.$store.commit('setUsername', res.data.username)
+      this.$store.commit('setUsername', res.code===0?'':res.data.username)
     }
   }
   
