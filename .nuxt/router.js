@@ -13,6 +13,7 @@ const _18752a8f = () => interopDefault(import('..\\pages\\seller\\management\\de
 const _7acb8dec = () => interopDefault(import('..\\pages\\seller\\management\\delivery\\shippment.vue' /* webpackChunkName: "pages_seller_management_delivery_shippment" */))
 const _941e464a = () => interopDefault(import('..\\pages\\seller\\management\\product\\check.vue' /* webpackChunkName: "pages_seller_management_product_check" */))
 const _2ca252bc = () => interopDefault(import('..\\pages\\seller\\management\\product\\publish.vue' /* webpackChunkName: "pages_seller_management_product_publish" */))
+const _47fa4574 = () => interopDefault(import('..\\pages\\seller\\management\\shop\\info.vue' /* webpackChunkName: "pages_seller_management_shop_info" */))
 const _5c61fd3a = () => interopDefault(import('..\\pages\\seller\\management\\transaction\\comment.vue' /* webpackChunkName: "pages_seller_management_transaction_comment" */))
 const _647c4ed0 = () => interopDefault(import('..\\pages\\seller\\management\\transaction\\deal.vue' /* webpackChunkName: "pages_seller_management_transaction_deal" */))
 const _147d7a30 = () => interopDefault(import('..\\pages\\user\\account\\index.vue' /* webpackChunkName: "pages_user_account_index" */))
@@ -120,6 +121,10 @@ export function createRouter() {
         path: "product/publish",
         component: _2ca252bc,
         name: "seller-management-product-publish"
+      }, {
+        path: "shop/info",
+        component: _47fa4574,
+        name: "seller-management-shop-info"
       }, {
         path: "transaction/comment",
         component: _5c61fd3a,

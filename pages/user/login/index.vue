@@ -66,6 +66,7 @@ export default {
       console.log(res)
     },
     async auth() {
+      console.log('auth check 2')
       const res = await request.get('/api/user/auth')
       console.log(res)
     }

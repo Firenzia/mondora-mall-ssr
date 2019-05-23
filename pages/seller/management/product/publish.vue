@@ -85,7 +85,12 @@ export default {
   methods: {
     async onSubmit() {
       const res = await request.post('/api/product', this.form)
-      console.log(res)
+      if (res.code === 1) {
+        this.$message({
+          message: '创建成功',
+          type: 'success'
+        })
+      }
     },
     async getToken() {
       const res = await request('/api/resource/qiniutoken')

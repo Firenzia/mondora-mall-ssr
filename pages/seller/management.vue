@@ -3,6 +3,12 @@
     <div class="pane-left">
       <p>卖家工作台</p>
 
+      <h4>店铺管理</h4>
+      <nuxt-link to="/seller/management/shop/info">
+        店铺信息
+      </nuxt-link>
+      <br>
+
       <h4>交易管理</h4>
       <nuxt-link to="/seller/management/transaction/deal">
         已卖出的宝贝

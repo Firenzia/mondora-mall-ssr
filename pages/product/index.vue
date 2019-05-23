@@ -3,11 +3,11 @@
     <div class="main-info">
       <div class="left">
         <div class="img">
-          <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1558182407645&di=c0141379751dfa6adcb1682850210a79&imgtype=0&src=http%3A%2F%2Fpic.51yuansu.com%2Fpic3%2Fcover%2F02%2F14%2F28%2F59ae2ed4cb675_610.jpg" alt="">
+          <img :src="imgSrc" alt="">
         </div>
       </div>
       <div class="right">
-        价格
+        价格 {{ product.price }}
         <el-button @click="dialogVisible = true">
           加入购物车
         </el-button>
@@ -49,11 +49,28 @@
   </div>
 </template>
 <script>
+import request from '@/service'
 export default {
   data() {
     return {
-      dialogVisible: false
+      dialogVisible: false,
+      product: {},
+      imgSrc: '',
+      id: '',
+      test: ''
     }
+  },
+  async asyncData({ route }) {
+    // const id = route.query.id
+    const res = await request.get(`/api/product?product_id=${route.query.id}`)
+    if (res.code === 1) {
+      return {
+        product: res.data,
+        imgSrc: res.data.img_url[0]
+      }
+    }
+  },
+  mounted() {
   },
   methods: {
     goToCart() {

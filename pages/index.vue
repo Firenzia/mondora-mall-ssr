@@ -1,8 +1,5 @@
 <template>
   <section class="container">
-    <div v-for="(item, index) in list" :key="index">
-      {{ item }}
-    </div>
     <button @click="getData">
       test
     </button>
@@ -15,12 +12,16 @@
         <p>配饰</p>
       </div>
       <div class="product">
-        <div v-for="(item, index) in [1,2,3,4,5]" :key="index" class="product-item" @click="goTo">
-          <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1558182407645&di=c0141379751dfa6adcb1682850210a79&imgtype=0&src=http%3A%2F%2Fpic.51yuansu.com%2Fpic3%2Fcover%2F02%2F14%2F28%2F59ae2ed4cb675_610.jpg" alt="">
+        <div v-for="(item, index) in list" :key="index" class="product-item" @click="goTo(item._id)">
+          <div class="product-img">
+            <img :src="item.img_url[0]" alt="">
+          </div>
           <div class="detail">
-            <div><span>30.5</span><span>190人付款</span></div>
-            <div>粉色草莓慕斯蛋糕</div>
-            <div><span>鱼之家</span><span>京都</span></div>
+            <div>{{ item._id }}</div>
+            <div><span>{{ item.price }}￥</span><span>190人付款</span></div>
+            <div>{{ item.product_name }}</div>
+            <div>{{ item.description }}</div>
+            <div><span>{{ item.shop.shop_name }}</span><span>京都</span></div>
           </div>
         </div>
       </div>
@@ -35,36 +36,36 @@ export default {
 
   data() {
     return {
-      list: [],
+      list: []
     }
   },
 
   async asyncData() {
-    const res = await request.get('/api/student/list', { })
+    const res = await request.get('/api/product/list', { })
     console.log('make reqdd 222in async data', res)
     return {
-      list: res.result
+      list: res.data.productList
     }
-
+  },
+  mounted() {
+    // this.check()
   },
   methods: {
     async getData() {
       const res = await request.get('/api/product/list')
       console.log(res.result)
     },
-    goTo() {
-      this.$router.push('/product?id=100')
+    goTo(id) {
+      this.$router.push({ path: 'product', query: { id } })
     },
-    async check(){
+    async check() {
       // 开始服务端渲染没拿到cookie
-      let res = await request.get('/api/user/auth')
+      console.log('auth check1')
+      const res = await request.get('/api/user/auth')
       this.$store.commit('setLogin', res.code)
     }
-  },
-  mounted(){
-    // this.check()
-  },
-  
+  }
+
 }
 </script>
 
@@ -72,7 +73,7 @@ export default {
 .product-wrapper{
   display: flex;
   .category{
-    width:200px;
+    width:400px;
   }
   .product{
     flex-grow:1;
@@ -82,13 +83,23 @@ export default {
       width:200px;
       height: auto;
       margin: 0 30px 60px 0;
+      border: 1px solid #ccc;
       .detail > div{
         display: flex;
         justify-content: space-between;
       }
-      img{
-        width: 100%;
+      .product-img{
+        width:200px;
+        height:200px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+          img{
+          width: 100%;
+        }
       }
+
     }
   }
 }
