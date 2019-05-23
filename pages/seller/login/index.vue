@@ -1,6 +1,5 @@
 <template>
   <div>
-    user login
     <!-- 登录组件后面作为公共组件 -->
     <div class="login-wrapper">
       <el-form ref="form" :model="form" label-width="80px">
@@ -31,8 +30,8 @@
       </el-form>
     </div>
 
-    <nuxt-link to="/">
-      login
+     <nuxt-link to="/">
+      返回首页
     </nuxt-link>
   </div>
 </template>
@@ -55,7 +54,9 @@ export default {
         username: window.encodeURIComponent(this.form.username),
         password: CryptoJS.MD5(this.form.password).toString()
       })
-      console.log(res)
+      if(res.code === 1){
+        this.$router.push('/')
+      }
     },
     async logout() {
       const res = await request.post('/api/seller/logout', {})

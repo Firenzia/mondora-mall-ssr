@@ -62,7 +62,8 @@ module.exports = {
   plugins: [
     '@/plugins/element-ui',
     '@/plugins/axios',
-    '@/plugins/router'
+    '@/plugins/router',
+    '@/plugins/vue-inject.js'
   ],
 
   /*

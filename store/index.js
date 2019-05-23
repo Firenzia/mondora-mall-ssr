@@ -8,23 +8,26 @@ const store = () => new Vuex.Store({
 
   state: {
     isLogin: 0,
-    username: ''
+    username: '',
+    accountType: 0   // 1 买家 2 卖家
   },
   mutations: {
-    setLogin(state, status) {
-      console.log('status', status)
-      state.isLogin = status
+    setLogin(state, {isLogin, username, accountType}) {
+      console.log('setLogin')
+      state.isLogin = isLogin
+      state.username = username
+      state.accountType = accountType
     },
     setUsername(state, name) {
       state.username = name
     }
   },
   actions: {
-    async setLogin({ commit }) {
-      const res = await request.get('/api/user/auth')
-      console.log('res', res)
-      commit('setLogin', res.code)
-    }
+    // async setLogin({ commit }) {
+    //   const res = await request.get('/api/user/auth')
+    //   console.log('res', res)
+    //   commit('setLogin', res.code)
+    // }
   }
 })
 

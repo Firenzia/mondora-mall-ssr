@@ -32,7 +32,7 @@
     </div>
 
     <nuxt-link to="/">
-      login
+      返回首页
     </nuxt-link>
   </div>
 </template>
@@ -55,7 +55,9 @@ export default {
         username: window.encodeURIComponent(this.form.username),
         password: CryptoJS.MD5(this.form.password).toString()
       })
-      console.log(res)
+       if(res.code === 1){
+        this.$router.push('/')
+      }
     },
     async logout() {
       const res = await request.post('/api/user/logout', {})
@@ -66,7 +68,6 @@ export default {
       console.log(res)
     },
     async auth() {
-      console.log('auth check 2')
       const res = await request.get('/api/user/auth')
       console.log(res)
     }
