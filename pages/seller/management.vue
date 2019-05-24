@@ -58,7 +58,7 @@ export default {
   .pane-right{
     flex-grow:1;
     border:1px solid lightseagreen;
-    padding:20px;
+    padding:30px 40px;
   }
 }
 </style>
