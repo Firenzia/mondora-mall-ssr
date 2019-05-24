@@ -53,6 +53,7 @@ export default {
   .pane-left{
     width:200px;
     border:1px solid lightseagreen;
+    flex-shrink: 0;
   }
   .pane-right{
     flex-grow:1;

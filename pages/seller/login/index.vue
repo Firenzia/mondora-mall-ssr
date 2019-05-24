@@ -30,7 +30,7 @@
       </el-form>
     </div>
 
-     <nuxt-link to="/">
+    <nuxt-link to="/">
       返回首页
     </nuxt-link>
   </div>
@@ -54,8 +54,8 @@ export default {
         username: window.encodeURIComponent(this.form.username),
         password: CryptoJS.MD5(this.form.password).toString()
       })
-      if(res.code === 1){
-        this.$router.push('/')
+      if (res.code === 1) {
+        this.$router.push('/seller/management/shop/info')
       }
     },
     async logout() {

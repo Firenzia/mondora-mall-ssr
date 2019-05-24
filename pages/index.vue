@@ -42,7 +42,6 @@ export default {
 
   async asyncData() {
     const res = await request.get('/api/product/list', { })
-    console.log('make reqdd 222in async data', res)
     return {
       list: res.data.productList
     }
