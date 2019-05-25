@@ -39,14 +39,14 @@
 // }
 
 // start()
-// const { Nuxt, Builder } = require('nuxt')
-import { Nuxt, Builder } from 'nuxt'
+const { Nuxt, Builder } = require('nuxt')
+// import { Nuxt, Builder } from 'nuxt'
 const fastify = require('fastify')({
   logger: true
 })
 
 // Import and Set Nuxt.js options
-const config = require('../nuxt.config.js')
+const config = require('../nuxt.config.ts')
 config.dev = !(process.env.NODE_ENV === 'production')
 
 async function start() {

@@ -9,7 +9,6 @@ const IS_DEV = process.env.NODE_ENV !== 'production'
 if (process.server) {
   // 服务端请求，即在asycData中发起的请求 // The server-side needs a full url to works
   // config.baseURL = 'http://127.0.0.1:8000'
-  console.log('process server ===================')
   config.baseURL = `http://${process.env.HOST || 'localhost'}:${process.env.PORT || 8000}`
 }
 
@@ -19,7 +18,6 @@ const service = axios.create(config)
 service.interceptors.request.use(
   (config) => {
     // if (config.method === 'post') config.data = qs.stringify(config.data)
-    console.log('request config', config.url)
     return config
   },
   (error) => {

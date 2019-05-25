@@ -2,7 +2,7 @@
   <el-row>
     <el-col :offset="3" :span="6">
       <nuxt-link to="/">
-        mondora
+        mondora  {{$store.state}}
       </nuxt-link>
 
       <div class="account" @click="login(1)">
@@ -47,7 +47,7 @@ export default {
     ...mapState(['isLogin', 'username', 'accountType'])
   },
   mounted() {
-    this.checkStatus()
+    // this.checkStatus()
     console.log('store', this.$store)
   },
   methods: {
@@ -70,7 +70,7 @@ export default {
           break
         }
       }
-
+      console.log('meta', meta, 'setlogin')
       this.$store.commit('setLogin', meta)
     },
     login(type) {
@@ -115,7 +115,6 @@ export default {
 </script>
 
 <style lang="scss">
-  @import "@/assets/css/public/layout.scss";
 .m-header{
   background: lightseagreen
 }

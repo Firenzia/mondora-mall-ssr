@@ -28,45 +28,33 @@
     </div>
   </section>
 </template>
-
-<script>
+<script lang="ts">
+import { Component, Vue, Prop } from 'vue-property-decorator'
 import request from '@/service'
 
-export default {
-
-  data() {
-    return {
-      list: []
-    }
-  },
-
+@Component({
   async asyncData() {
-    const res = await request.get('/api/product/list', { })
-    return {
-      list: res.data.productList
-    }
-  },
-  mounted() {
-    // this.check()
-  },
-  methods: {
-    async getData() {
       const res = await request.get('/api/product/list')
-      console.log(res.result)
-    },
-    goTo(id) {
-      this.$router.push({ path: 'product', query: { id } })
-    },
-    async check() {
-      // 开始服务端渲染没拿到cookie
-      console.log('auth check1')
-      const res = await request.get('/api/user/auth')
-      this.$store.commit('setLogin', res.code)
+      return {
+        list: res.data.productList
+      }
     }
+})
+export default class Hello extends Vue {
+  private list : Array<any> = []
+  private async mounted() {
   }
 
+  private async getData() {
+    const res = await request.get('/api/product/list')
+  }
+
+  private goTo(id) {
+    this.$router.push({ path: 'product', query: { id } })
+  }
 }
 </script>
+
 
 <style lang="scss" scoped>
 .product-wrapper{
