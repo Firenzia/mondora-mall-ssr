@@ -19,7 +19,6 @@ export const actions = {
     console.log('nuxt server init ====================================')    
     if (req.headers.cookie) {
       const parsed = JSON.parse(req.headers.cookie.split(";")[0].split("=")[1]).passport.user
-      
       try {
         commit('setLogin', {isLogin:1, username: parsed.username, accountType: parsed.account_type})
       } catch (err) {

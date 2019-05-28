@@ -14,7 +14,7 @@
           <el-button @click="dialogVisible = true">
           加入心愿单
         </el-button>
-          <el-button @click="dialogVisible = true">
+          <el-button @click="addToCart">
           加入购物车
         </el-button>
         </div>
@@ -56,6 +56,7 @@
 </template>
 <script>
 import request from '@/service'
+import {mapState} from 'vuex'
 export default {
   data() {
     return {
@@ -76,11 +77,24 @@ export default {
   },
   mounted() {
   },
+  computed:{
+    ...mapState(['isLogin'])
+  },
   methods: {
     handleChange(){},
     goToCart() {
       this.dialogVisible = false
       this.$router.push('/cart')
+    },
+    addToCart(){
+      if(this.isLogin === 1){
+        this.dialogVisible = true
+      }else{
+         this.$message({
+          message: '请先登录',
+          type: 'warn'
+        })
+      }
     }
   }
 }

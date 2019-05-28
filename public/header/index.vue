@@ -2,7 +2,7 @@
   <el-row>
     <el-col :offset="3" :span="6">
       <nuxt-link to="/">
-        mondora  {{$store.state}}
+        mondora  {{$store.state}} 
       </nuxt-link>
 
       <div class="account" @click="login(1)">
