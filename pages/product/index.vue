@@ -7,10 +7,17 @@
         </div>
       </div>
       <div class="right">
-        价格 {{ product.price }}
-        <el-button @click="dialogVisible = true">
+        <div>{{product.product_name}}</div>
+        <div>价格 {{ product.price }}</div>
+        <div>数量 <el-input-number v-model="num" @change="handleChange" :min="1" :max="10" label="描述文字"></el-input-number></div>
+        <div>
+          <el-button @click="dialogVisible = true">
+          加入心愿单
+        </el-button>
+          <el-button @click="dialogVisible = true">
           加入购物车
         </el-button>
+        </div>
       </div>
     </div>
 
@@ -54,14 +61,12 @@ export default {
   data() {
     return {
       dialogVisible: false,
+      num:1,
       product: {},
       imgSrc: '',
-      id: '',
-      test: ''
     }
   },
   async asyncData({ route }) {
-    // const id = route.query.id
     const res = await request.get(`/api/product?product_id=${route.query.id}`)
     if (res.code === 1) {
       return {
@@ -88,6 +93,7 @@ export default {
     .left{
       width:460px;
       padding: 10px;
+      flex-shrink:0;
        .img{
           width:400px;
           height: 400px;
@@ -97,7 +103,8 @@ export default {
         }
     }
     .right{
-      flex-grow: 1
+      flex-grow: 1;
+      border:1px solid #ccc;
     }
   }
 }
